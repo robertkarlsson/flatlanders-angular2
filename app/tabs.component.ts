@@ -60,9 +60,8 @@ export class TabsComponent{
     public product;
     public tab = 1;
 
-    setTab(tabId){
-        this.tab = tabId;
-        console.log(this.tab);
+    setTab(setTab){
+        this.tab = setTab ||1;
     }
 
 

@@ -25,9 +25,8 @@ System.register(['angular2/core', './review.component'], function(exports_1) {
                 function TabsComponent() {
                     this.tab = 1;
                 }
-                TabsComponent.prototype.setTab = function (tabId) {
-                    this.tab = tabId;
-                    console.log(this.tab);
+                TabsComponent.prototype.setTab = function (setTab) {
+                    this.tab = setTab || 1;
                 };
                 TabsComponent = __decorate([
                     core_1.Component({

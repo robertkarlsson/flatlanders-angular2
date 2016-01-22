@@ -1,4 +1,4 @@
-System.register(['angular2/core', './tabs.component', './product.service'], function(exports_1) {
+System.register(['angular2/core', './tabs.component', './gallery.component', './product.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") return Reflect.decorate(decorators, target, key, desc);
         switch (arguments.length) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './tabs.component', './product.service'], func
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, tabs_component_1, product_service_1;
+    var core_1, tabs_component_1, gallery_component_1, product_service_1;
     var GemStoreComponent;
     return {
         setters:[
@@ -19,6 +19,9 @@ System.register(['angular2/core', './tabs.component', './product.service'], func
             },
             function (tabs_component_1_1) {
                 tabs_component_1 = tabs_component_1_1;
+            },
+            function (gallery_component_1_1) {
+                gallery_component_1 = gallery_component_1_1;
             },
             function (product_service_1_1) {
                 product_service_1 = product_service_1_1;
@@ -36,8 +39,8 @@ System.register(['angular2/core', './tabs.component', './product.service'], func
                 GemStoreComponent = __decorate([
                     core_1.Component({
                         selector: 'gem-store',
-                        template: "\n\n    <div>\n        <div *ngFor=\"#product of products\">\n            <h3>{{product.name }}</h3>\n            <em>{{product.price | currency: 'SEK'}}</em>\n\n\n\n            <tabs [product]=\"product\"></tabs>\n\n            <button >Purchase</button>\n\n\n\n\n\n\n\n        </div>\n    </div>\n\n        ",
-                        directives: [tabs_component_1.TabsComponent],
+                        template: "\n\n    <div>\n        <div *ngFor=\"#product of products\">\n            <h3>{{product.name }}</h3>\n            <em>{{product.price | currency: 'USD'}}</em>\n\n            <gallery [product]=\"product\"></gallery>\n\n            <tabs [product]=\"product\"></tabs>\n\n            <button >Purchase</button>\n\n\n        </div>\n    </div>\n\n        ",
+                        directives: [tabs_component_1.TabsComponent, gallery_component_1.GalleryComponent],
                         providers: [product_service_1.ProductService]
                     }), 
                     __metadata('design:paramtypes', [product_service_1.ProductService])

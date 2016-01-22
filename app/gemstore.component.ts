@@ -3,6 +3,7 @@
  */
 import {Component, OnInit} from 'angular2/core';
 import {TabsComponent} from './tabs.component';
+import {GalleryComponent} from './gallery.component'
 import {ProductService} from './product.service';
 
 
@@ -15,34 +16,27 @@ import {ProductService} from './product.service';
     <div>
         <div *ngFor="#product of products">
             <h3>{{product.name }}</h3>
-            <em>{{product.price | currency: 'SEK'}}</em>
+            <em>{{product.price | currency: 'USD'}}</em>
 
-
+            <gallery [product]="product"></gallery>
 
             <tabs [product]="product"></tabs>
 
             <button >Purchase</button>
 
 
-
-
-
-
-
         </div>
     </div>
 
         `,
-    directives: [TabsComponent],
+    directives: [TabsComponent, GalleryComponent],
     providers: [ProductService]
 })
 
 export class GemStoreComponent implements OnInit{
     public products;
 
-    constructor(private _productService: ProductService ){
-
-    }
+    constructor(private _productService: ProductService ){ }
 
     ngOnInit(){
         this.products = this._productService.getGems();

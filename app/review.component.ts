@@ -19,12 +19,7 @@ import {Component} from 'angular2/core';
       <h4>Submit a Review</h4>
       <fieldset class="form-group">
         <select  [(ngModel)]="review.stars"  class="form-control"   title="Stars">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-
+          <option *ngFor="#value of [1,2,3,4,5]; #i = index" value="{{value}}">{{value}}</option>
         </select>
       </fieldset>
 

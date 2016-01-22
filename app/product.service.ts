@@ -11,3 +11,5 @@ export class ProductService {
        return GEMS;
     }
 }
+
+
