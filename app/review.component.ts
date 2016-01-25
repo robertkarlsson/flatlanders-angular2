@@ -6,13 +6,13 @@ import {Component} from 'angular2/core';
 @Component({
     selector: 'review',
     template: `
-
+    
     <form (submit)="addReview()" name="reviewForm">
 
       <blockquote>
-        <strong> Stars: {{review.stars}}</strong>
+        <strong> {{review.stars}}  Stars</strong>
             {{review.body}}
-        <cite class="clearfix"> {{review.author}}  </cite>
+        <cite class="clearfix">-{{review.author}}  </cite>
       </blockquote>
 
 

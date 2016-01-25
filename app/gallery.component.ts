@@ -1,12 +1,13 @@
 import {Component} from 'angular2/core';
-
 @Component({
     selector: 'gallery',
     template: `
-      <div class='gallery' *ngIf="product.images.length">
+      <div *ngIf="product.images.length">
+      <div class="img-wrap">
         <img [src]="product.images[current]">
-        <ul class="list-inline thumbs">
-          <li class="thumbnail" *ngFor="#image of product.images; #i = index">
+      </div>
+        <ul class="img-thumbnails clearfix">
+          <li class="small-image pull-left thumbnail" *ngFor="#image of product.images; #i = index">
             <img [src]="image" alt="" (click)="setCurrent(i)">
           </li>
         </ul>
@@ -21,8 +22,6 @@ export class GalleryComponent{
     public current: number = 0;
 
     setCurrent(current: number = 0){
-
         this.current = current;
-        console.log(this.current);
     }
 }

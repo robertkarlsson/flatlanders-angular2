@@ -1,11 +1,9 @@
 System.register(['angular2/core'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") return Reflect.decorate(decorators, target, key, desc);
-        switch (arguments.length) {
-            case 2: return decorators.reduceRight(function(o, d) { return (d && d(o)) || o; }, target);
-            case 3: return decorators.reduceRight(function(o, d) { return (d && d(target, key)), void 0; }, void 0);
-            case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
-        }
+        var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
@@ -25,12 +23,11 @@ System.register(['angular2/core'], function(exports_1) {
                 GalleryComponent.prototype.setCurrent = function (current) {
                     if (current === void 0) { current = 0; }
                     this.current = current;
-                    console.log(this.current);
                 };
                 GalleryComponent = __decorate([
                     core_1.Component({
                         selector: 'gallery',
-                        template: "\n      <div class='gallery' *ngIf=\"product.images.length\">\n        <img [src]=\"product.images[current]\">\n        <ul class=\"list-inline thumbs\">\n          <li class=\"thumbnail\" *ngFor=\"#image of product.images; #i = index\">\n            <img [src]=\"image\" alt=\"\" (click)=\"setCurrent(i)\">\n          </li>\n        </ul>\n      </div>\n    ",
+                        template: "\n      <div *ngIf=\"product.images.length\">\n      <div class=\"img-wrap\">\n        <img [src]=\"product.images[current]\">\n      </div>\n        <ul class=\"img-thumbnails clearfix\">\n          <li class=\"small-image pull-left thumbnail\" *ngFor=\"#image of product.images; #i = index\">\n            <img [src]=\"image\" alt=\"\" (click)=\"setCurrent(i)\">\n          </li>\n        </ul>\n      </div>\n    ",
                         inputs: ['product']
                     }), 
                     __metadata('design:paramtypes', [])

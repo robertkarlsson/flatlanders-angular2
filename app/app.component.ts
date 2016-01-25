@@ -6,7 +6,7 @@ import {GemStoreComponent} from './gemstore.component';
 
 @Component({
     selector: 'my-app',
-    template: '<div> <gem-store></gem-store> </div>',
+    template: '<gem-store></gem-store>',
     directives: [GemStoreComponent]
 })
 

@@ -13,9 +13,8 @@ This project will be updated to include the full rewrite of the Flatlanders Gem 
 
 ## Upcoming Changes
 
-Review of the code to match the Codeschool project as much as possible
-HTML setup not identical
-Names on variables not identical
+Last check to match the code-style from Codeschool.
+Add the comments from Codeschool (right now messing up syntax highlighting in webstorm).
 
 ## Other
 
